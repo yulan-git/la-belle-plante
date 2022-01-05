@@ -11,25 +11,28 @@ import * as _ from 'underscore';
 })
 export class PageAccueilComponent implements OnInit, OnDestroy {
   //private data: any[] | undefined;
-  private data!: any[];
+  public data!: any[];
   public listCategories!: string[];
   private subListProduct: Subscription;
 
   constructor(private plantService: PlantesService) {
 
-
     this.subListProduct = this.plantService.listProductsSubject$.subscribe(response => {
       console.log(response);
-      this.data = response;
-      this.listCategories = _.uniq(this.data.map(x => x.product_breadcrumb_label));
+      this.listCategories = _.uniq(response.map(x => x.product_breadcrumb_label));
+      response.length = 40;
+      this.data = [...response];
       console.log(this.listCategories);
     })
 
+  }
+  
+  ngOnInit(): void {
     this.plantService.getListProductsChaud();
   }
 
-  ngOnInit(): void {
-
+  onGetAllProducts() {
+    
   }
 
   ngOnDestroy(): void {

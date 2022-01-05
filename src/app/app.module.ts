@@ -10,6 +10,9 @@ import { PagePanierComponent } from './pages/page-panier/page-panier.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageDetailsComponent } from './pages/page-details/page-details.component';
 import { FilterSideBarComponent } from './components/fiter-side-bar/filter-side-bar/filter-side-bar.component';
+import { CardPlantComponent } from './components/card-plant/card-plant.component';
+import { IconComponent } from './components/icon/icon.component';
+import { AvisBarComponent } from './components/avis-bar/avis-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FilterSideBarComponent } from './components/fiter-side-bar/filter-side-
     PagePanierComponent,
     PageNotFoundComponent,
     PageDetailsComponent,
-    FilterSideBarComponent
+    FilterSideBarComponent,
+    CardPlantComponent,
+    IconComponent,
+    AvisBarComponent
   ],
   imports: [
     BrowserModule,
